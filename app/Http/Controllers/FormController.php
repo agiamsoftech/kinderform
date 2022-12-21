@@ -103,7 +103,7 @@ class FormController extends Controller
     }
 
     public function viewques(Request $data){
-        dd('viewques')
+        dd('viewques');
         return view('viewques');
     }
 
