@@ -33,4 +33,7 @@ Route::post('submitpersonform',[FormController::class,'addpersonDetail'])->name(
 
 Route::get('deleteperson/{id?}',[FormController::class,'deleteKidPerson'])->name('deleteperson');
 
-Route::get('viewques',[FormController::class,'viewques'])->name('viewques');
+Route::get('database', function () {
+    return "hell";
+    // return view('database');
+});

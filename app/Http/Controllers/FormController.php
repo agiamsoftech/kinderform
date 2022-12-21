@@ -102,10 +102,5 @@ class FormController extends Controller
         return redirect('/managekid');
     }
 
-    public function viewques(Request $data){
-        dd('viewques');
-        return view('viewques');
-    }
-
 
 }
