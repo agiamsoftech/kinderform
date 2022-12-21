@@ -33,7 +33,7 @@
         <th>City</th>
         <th>Address</th>
         <th>Zip Code</th>
-        {{-- <th>Photo</th> --}}
+        <th>Photo</th>
         <th>Person (Name, Relation, Contact)</th>
         <th>Action</th>
       </tr>
@@ -49,7 +49,8 @@
             <td>{{$data->city}}</td>
             <td>{{$data->address}}</td>
             <td>{{$data->zipcode}}</td>
-            {{-- <td>{{$data->photo}}</td> --}}
+            
+            <td><img src="{{ asset('storage/app/'.$data['photo']) }}" height="30px" width="30px"></td>
             <td>
                 <?php 
                 $persons = App\Models\PersonDetail::where('kid_id', '=', $data->id)->get();
