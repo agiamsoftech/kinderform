@@ -103,16 +103,8 @@ class FormController extends Controller
     }
 
     public function viewques(Request $data){
-        $datas = ChildForm::all();
-        if(isset($datas)){
-            $datas = $datas;
-        }else{
-            $datas = 'No data found';
-        }
-
-        return view('managekid',[
-            'datas' => $datas
-        ] );
+        dd('viewques')
+        return view('viewques');
     }
 
 
