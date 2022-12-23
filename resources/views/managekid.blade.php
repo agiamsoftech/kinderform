@@ -50,7 +50,9 @@
             <td>{{$data->address}}</td>
             <td>{{$data->zipcode}}</td>
             
-            <td><img src="{{ asset('storage/app/'.$data['photo']) }}" height="30px" width="30px"></td>
+            <td>
+              <img src="{{ asset('storage/'.$data['photo']) }}" height="30px" width="30px">
+            </td>
             <td>
                 <?php 
                 $persons = App\Models\PersonDetail::where('kid_id', '=', $data->id)->get();

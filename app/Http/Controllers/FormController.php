@@ -44,7 +44,13 @@ class FormController extends Controller
         ]);
         */
 
-        $upload =$req->file('photo')->store('Docs');
+        if( $req->hasFile('photo') ) {
+            $file = $req->file('photo');
+            // $filename = time() . '.' . $file->getClientOriginalExtension();//not use
+            $imagePath = $file->store('Docs');
+        }
+        // dd($imagePath);
+        // $imagePath =$req->file('photo')->store('Docs');
         
         $data = new ChildForm();
         $data->name = $req['name'];
@@ -55,7 +61,7 @@ class FormController extends Controller
         $data->state = $req['state'];
         $data->city = $req['city'];
         $data->zipcode = $req['zipcode'];
-        $data->photo = $upload;
+        $data->photo = $imagePath;
         $data->save();
         return redirect("managekid");
     }
